@@ -12,7 +12,6 @@ export async function createProduct(
 
     return product;
   } catch (error) {
-    console.log(error);
     throw error;
   }
 }

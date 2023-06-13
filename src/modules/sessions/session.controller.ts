@@ -12,6 +12,7 @@ import {
 } from "./session.service";
 import verifyPasswords from "../../utils/compare-passwords";
 import { createTokens } from "../../utils/create-tokens";
+import logger from "../../utils/logger";
 
 export async function createSessionHandler(
   req: Request<{}, {}, createSessionBodyType>,
@@ -53,7 +54,7 @@ export async function createSessionHandler(
     });
     res.json("[Authentication Succeded]: Tokens stored in HTTPOnly Cookies");
   } catch (error) {
-    console.log(error);
+    logger.error(error);
     return res.send("failed to login, please try later");
   }
 }

@@ -7,7 +7,9 @@ import {
   findAllProducts,
   findProduct,
 } from "./product.service";
-import { payload } from "../../middlewares/check-user";
+import type { payload } from "../../middlewares/check-user";
+
+import logger from "../../utils/logger";
 
 export async function createProductHandler(
   req: Request<{}, {}, createProductBodyType>,
@@ -19,7 +21,7 @@ export async function createProductHandler(
 
     return res.json(product);
   } catch (error) {
-    console.log(error);
+    logger.error(error);
     return res.json("Product Creation Failed");
   }
 }
@@ -39,7 +41,7 @@ export async function findProductHandler(req: Request, res: Response) {
 
     return res.json(product);
   } catch (error) {
-    console.log(error);
+    logger.error(error);
     return res.json("failed while fetching product from database");
   }
 }
@@ -55,7 +57,7 @@ export async function findAllProductHandler(req: Request, res: Response) {
 
     return res.json(products);
   } catch (error) {
-    console.log(error);
+    logger.error(error);
     return res.json("failed while fetching product from database");
   }
 }
@@ -68,7 +70,7 @@ export async function deleteProductHandler(req: Request, res: Response) {
     await deleteProduct(pid);
     return res.json("deleted product");
   } catch (error) {
-    console.log(error);
+    logger.error(error);
     return res.json("failed to delete all products");
   }
 }
@@ -79,7 +81,7 @@ export async function deleteAllProductsHandler(req: Request, res: Response) {
     await deleteAllProducts(user.uid);
     return res.json("deleted all products");
   } catch (error) {
-    console.log(error);
+    logger.error(error);
     return res.json("failed to delete all products");
   }
 }

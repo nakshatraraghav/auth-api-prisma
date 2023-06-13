@@ -6,6 +6,7 @@ import helmet from "helmet";
 
 import router from "./router";
 import connect from "./utils/connect";
+import logger from "./utils/logger";
 
 dotenv.config();
 const port = process.env.PORT as string;
@@ -19,5 +20,5 @@ router(app);
 connect();
 
 app.listen(port, () => {
-  console.log(`listening on localhost:${port}`);
+  logger.info(`listening on localhost:${port}`);
 });

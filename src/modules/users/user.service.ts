@@ -2,6 +2,7 @@ import { user } from "@prisma/client";
 import db from "../../utils/db.server";
 
 import { createUserBodyType } from "./user.schema";
+import logger from "../../utils/logger";
 
 export async function findUser(username: string) {
   try {
@@ -44,7 +45,7 @@ export async function deleteUser(id: string) {
     });
     return true;
   } catch (error) {
-    console.log(error);
+    logger.error(error);
     return false;
   }
 }

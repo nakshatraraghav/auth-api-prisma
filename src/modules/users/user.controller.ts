@@ -18,8 +18,6 @@ export async function deleteUserHandler(req: Request, res: Response) {
   const user = res.locals.user as payload;
   const status = await deleteUser(user.uid);
 
-  console.log(status);
-
   if (!status) {
     return res.json("failed to delete the user, try again");
   }

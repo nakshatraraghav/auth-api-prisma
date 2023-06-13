@@ -1,11 +1,12 @@
 import db from "./db.server";
+import logger from "./logger";
 
 export default async function connect() {
   try {
     await db.$connect();
-    console.log("server connected to planetscale");
+    logger.info("server connected to planetscale");
   } catch (error) {
-    console.log("server failed to connect to planetscale");
-    console.error(error);
+    logger.error("server failed to connect to planetscale");
+    logger.error(error);
   }
 }

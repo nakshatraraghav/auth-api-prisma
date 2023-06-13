@@ -1,6 +1,8 @@
 import { user } from "@prisma/client";
 import db from "../../utils/db.server";
 
+import logger from "../../utils/logger";
+
 export async function createSession(userId: string, userAgent: string) {
   try {
     const session = await db.session.create({
@@ -53,7 +55,7 @@ export async function invalidateSession(sid: string) {
     });
     return session;
   } catch (error) {
-    console.log(error);
+    logger.error(error);
     return false;
   }
 }
@@ -70,7 +72,7 @@ export async function invalidateAllSessions(uid: string) {
     });
     return true;
   } catch (error) {
-    console.log(error);
+    logger.error(error);
     return false;
   }
 }
