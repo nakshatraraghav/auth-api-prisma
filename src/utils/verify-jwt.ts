@@ -1,10 +1,10 @@
 import jwt from "jsonwebtoken";
 
-const private_key = process.env.PRIVATE_KEY as string;
+import { env } from "./zenv";
 
 export default function verifyToken(token: string) {
   try {
-    const decoded = jwt.verify(token, private_key);
+    const decoded = jwt.verify(token, env.PRIVATE_KEY);
     return {
       user: decoded,
       expired: false,

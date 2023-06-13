@@ -1,0 +1,214 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "prisma-auth-api",
+    "dateExported": "2023-06-13T07:26:16.947Z",
+    "version": "1.1",
+    "folders": [
+        {
+            "_id": "77b44966-2d79-490a-bc43-8a98d47051ed",
+            "name": "users",
+            "containerId": "",
+            "created": "2023-06-09T12:11:06.747Z",
+            "sortNum": 10000
+        },
+        {
+            "_id": "6581d389-5023-4668-9717-2fd94a7710bf",
+            "name": "sessions",
+            "containerId": "",
+            "created": "2023-06-09T14:02:35.353Z",
+            "sortNum": 20000
+        },
+        {
+            "_id": "6c70654a-5820-4944-9804-4bda7aa93420",
+            "name": "products",
+            "containerId": "",
+            "created": "2023-06-10T14:52:33.621Z",
+            "sortNum": 30000
+        }
+    ],
+    "requests": [
+        {
+            "_id": "2080b520-56a5-49d0-b7ef-c5fe0b873702",
+            "colId": "6dd2d7e8-a1d8-446b-8f4f-16d02e143191",
+            "containerId": "",
+            "name": "healthcheck",
+            "url": "localhost:1337/healthcheck",
+            "method": "GET",
+            "sortNum": 10000,
+            "created": "2023-06-09T12:09:59.270Z",
+            "modified": "2023-06-09T12:10:57.382Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "692c4426-1c98-4ff0-93d6-747e02a5ecf0",
+            "colId": "6dd2d7e8-a1d8-446b-8f4f-16d02e143191",
+            "containerId": "77b44966-2d79-490a-bc43-8a98d47051ed",
+            "name": "create user",
+            "url": "localhost:1337/users/",
+            "method": "POST",
+            "sortNum": 20000,
+            "created": "2023-06-09T12:11:12.230Z",
+            "modified": "2023-06-10T15:28:14.003Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"name\": \"hello hi\",\n  \"username\": \"hellohi\",\n  \"email\": \"hello@gmail.com\",\n  \"password\": \"hellohiasd\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "d4d44eb4-184a-42bf-ab5d-be2ab57e1d77",
+            "colId": "6dd2d7e8-a1d8-446b-8f4f-16d02e143191",
+            "containerId": "6581d389-5023-4668-9717-2fd94a7710bf",
+            "name": "login",
+            "url": "localhost:1337/sessions",
+            "method": "POST",
+            "sortNum": 30000,
+            "created": "2023-06-09T14:02:40.465Z",
+            "modified": "2023-06-10T15:28:17.607Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"name\": \"hello hi\",\n  \"username\": \"hellohi\",\n  \"email\": \"hello@gmail.com\",\n  \"password\": \"hellohiasd\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "943474ae-b9b8-47b1-89e7-2bf01ead8941",
+            "colId": "6dd2d7e8-a1d8-446b-8f4f-16d02e143191",
+            "containerId": "6581d389-5023-4668-9717-2fd94a7710bf",
+            "name": "active sessions",
+            "url": "localhost:1337/sessions/active",
+            "method": "GET",
+            "sortNum": 40000,
+            "created": "2023-06-10T09:26:55.667Z",
+            "modified": "2023-06-10T09:27:36.615Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "7b63ad59-620b-4bd6-adfa-19bb106df237",
+            "colId": "6dd2d7e8-a1d8-446b-8f4f-16d02e143191",
+            "containerId": "6581d389-5023-4668-9717-2fd94a7710bf",
+            "name": "logout",
+            "url": "localhost:1337/sessions/",
+            "method": "DELETE",
+            "sortNum": 50000,
+            "created": "2023-06-10T13:41:10.128Z",
+            "modified": "2023-06-10T13:42:55.973Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "31026fcc-1548-4880-aa5a-3d5cd47546fe",
+            "colId": "6dd2d7e8-a1d8-446b-8f4f-16d02e143191",
+            "containerId": "6581d389-5023-4668-9717-2fd94a7710bf",
+            "name": "logout from all devices",
+            "url": "localhost:1337/sessions/all",
+            "method": "DELETE",
+            "sortNum": 60000,
+            "created": "2023-06-10T13:54:46.855Z",
+            "modified": "2023-06-10T13:54:53.661Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "a5abde24-3826-40c4-b0ab-43020780b8cc",
+            "colId": "6dd2d7e8-a1d8-446b-8f4f-16d02e143191",
+            "containerId": "77b44966-2d79-490a-bc43-8a98d47051ed",
+            "name": "delete user",
+            "url": "localhost:1337/users/",
+            "method": "DELETE",
+            "sortNum": 70000,
+            "created": "2023-06-10T14:02:11.216Z",
+            "modified": "2023-06-10T14:03:01.921Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "81f2fdff-0a85-469b-8af8-20c4c8b71918",
+            "colId": "6dd2d7e8-a1d8-446b-8f4f-16d02e143191",
+            "containerId": "6c70654a-5820-4944-9804-4bda7aa93420",
+            "name": "create product",
+            "url": "localhost:1337/products/",
+            "method": "POST",
+            "sortNum": 80000,
+            "created": "2023-06-10T14:52:38.998Z",
+            "modified": "2023-06-10T15:28:24.126Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"name\": \"hellono\",\n  \"description\": \"Biggest 1.95” Horizon Curve Display: Fastrack Limitless FS1 comes with India's first largest 1.95” \",\n  \"price\": 0\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "8d1e53b4-644b-4eb9-85be-8025b33e42b2",
+            "colId": "6dd2d7e8-a1d8-446b-8f4f-16d02e143191",
+            "containerId": "6c70654a-5820-4944-9804-4bda7aa93420",
+            "name": "delete all",
+            "url": "localhost:1337/products/",
+            "method": "DELETE",
+            "sortNum": 85000,
+            "created": "2023-06-10T15:13:46.511Z",
+            "modified": "2023-06-10T15:13:56.017Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "c5b4d3f1-3d87-40a3-b830-5672ac59ef70",
+            "colId": "6dd2d7e8-a1d8-446b-8f4f-16d02e143191",
+            "containerId": "6c70654a-5820-4944-9804-4bda7aa93420",
+            "name": "delete one",
+            "url": "localhost:1337/products",
+            "method": "DELETE",
+            "sortNum": 90000,
+            "created": "2023-06-10T15:13:39.776Z",
+            "modified": "2023-06-13T07:25:28.051Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "e0ef4462-f736-4d4e-9d78-3fef57348f6c",
+            "colId": "6dd2d7e8-a1d8-446b-8f4f-16d02e143191",
+            "containerId": "6c70654a-5820-4944-9804-4bda7aa93420",
+            "name": "get products",
+            "url": "localhost:1337/products/",
+            "method": "GET",
+            "sortNum": 110000,
+            "created": "2023-06-10T15:24:13.653Z",
+            "modified": "2023-06-10T15:24:52.915Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "738eac1c-baeb-4843-8a99-10430e129f15",
+            "colId": "6dd2d7e8-a1d8-446b-8f4f-16d02e143191",
+            "containerId": "6c70654a-5820-4944-9804-4bda7aa93420",
+            "name": "get one product",
+            "url": "localhost:1337/products/hellono",
+            "method": "GET",
+            "sortNum": 120000,
+            "created": "2023-06-10T15:26:52.626Z",
+            "modified": "2023-06-13T07:25:13.111Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        }
+    ]
+}

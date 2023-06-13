@@ -1,16 +1,14 @@
 import jwt from "jsonwebtoken";
 
-const privateKey = process.env.PRIVATE_KEY as string;
-const accessTokenTtl = process.env.ACCESS_TOKEN_TTL as string;
-const refreshTokenTtl = process.env.REFRESH_TOKEN_TTL as string;
+import { env } from "./zenv";
 
 export function createTokens(payload: Object) {
-  const accessToken = jwt.sign(payload, privateKey, {
-    expiresIn: accessTokenTtl,
+  const accessToken = jwt.sign(payload, env.PRIVATE_KEY, {
+    expiresIn: env.ACCESS_TOKEN_TTL,
   });
 
-  const refreshToken = jwt.sign(payload, privateKey, {
-    expiresIn: refreshTokenTtl,
+  const refreshToken = jwt.sign(payload, env.PRIVATE_KEY, {
+    expiresIn: env.REFRESH_TOKEN_TTL,
   });
 
   return {
